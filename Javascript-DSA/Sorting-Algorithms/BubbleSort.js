@@ -1,5 +1,5 @@
 // Premise: Sort values based on a condition. So here bubble sort compares the value to the adjacent one and then on the basis of(lower or greater) swap places with the value at a particular index.
-// Values bubble to the top
+// Large values are placed to the top
 // Pseudocode:
 // 1. Start looping from a variable called i at the end of the array towards the beginning.
 // 2. Start an inner loop with a variable called j from the beginning until i-1.
