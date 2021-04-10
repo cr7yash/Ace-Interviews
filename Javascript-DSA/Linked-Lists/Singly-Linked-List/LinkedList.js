@@ -110,5 +110,27 @@ class SinglyLinkedList {
 	// Pseudocode- 1. The function should accept an index.
 	// 2. If the index is less than zero or greater than or equal to the length of the list, return null.
 	// 3. Loop through the list until you reach the index and return the node at that specific index.
-	get() {}
+	get(index) {
+		if (index < 0 || index >= this.length) return null;
+		let counter = 0;
+		let current = this.head;
+		while (counter !== index) {
+			current = current.next;
+			counter++;
+		}
+		return current;
+	}
+	// Set- Changing the value of a node based on it's position in the linked list.
+	// Pseudocode- 1. The function should accept a value and an index.
+	// 2. Use your get function to find the specific node.
+	// 3. If the node is not found, return false.
+	// 4. If found, set the value of that node to be the value passed to the function and return true.
+	set(index, val) {
+		let foundNode = this.get(index);
+		if (foundNode) {
+			foundNode.val = val;
+			return true;
+		}
+		return false;
+	}
 }
