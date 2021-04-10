@@ -45,4 +45,28 @@ class SinglyLinkedList {
 		this.length++;
 		return this;
 	}
+	//Pop- Remove the last node from the list.
+	// Pseudocode- 1. If there are no nodes in the ListeningStateChangedEvent, return undefined.
+	// 2. Loop through the list until you reach the tail.
+	// 3. Set the next property of the 2nd to last node to be null.
+	// 4. Set the tail to be the 2nd to last node.
+	// 5. Decrement the length of the list by 1.
+	// 6. Return the value of the node removed.
+	pop() {
+		if (!this.head) return undefined;
+		let current = this.head;
+		let newTail = current;
+		while (current.next) {
+			newTail = current;
+			current = current.next;
+		}
+		this.tail = newTail;
+		this.tail.next = null;
+		this.length--;
+		if (this.length === 0) {
+			this.head = null;
+			this.tail = null;
+		}
+		return current;
+	}
 }
