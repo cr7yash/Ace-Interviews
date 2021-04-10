@@ -30,7 +30,7 @@ class SinglyLinkedList {
 	}
 	//Push pseudocode- 1. Function should accept a value.
 	// 2. Create a new node using the value passed to the function.
-	// 3. If there is no head property on the ListeningStateChangedEvent, set the head and tail to be the newly created node.
+	// 3. If there is no head property on the list, set the head and tail to be the newly created node.
 	// 4. Otherwise, set the next property on the tail to be the new node and set the tail property on the list to be the newly created node.
 	// 5. Increment the length by one.
 	push(val) {
@@ -46,7 +46,7 @@ class SinglyLinkedList {
 		return this;
 	}
 	//Pop- Remove the last node from the list.
-	// Pseudocode- 1. If there are no nodes in the ListeningStateChangedEvent, return undefined.
+	// Pseudocode- 1. If there are no nodes in the list, return undefined.
 	// 2. Loop through the list until you reach the tail.
 	// 3. Set the next property of the 2nd to last node to be null.
 	// 4. Set the tail to be the 2nd to last node.
@@ -106,4 +106,9 @@ class SinglyLinkedList {
 		this.length++;
 		return this;
 	}
+	// Get- Retrieving a node by it's position in the linked list.
+	// Pseudocode- 1. The function should accept an index.
+	// 2. If the index is less than zero or greater than or equal to the length of the list, return null.
+	// 3. Loop through the list until you reach the index and return the node at that specific index.
+	get() {}
 }
