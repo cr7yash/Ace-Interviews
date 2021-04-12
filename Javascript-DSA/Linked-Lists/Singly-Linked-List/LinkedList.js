@@ -133,4 +133,63 @@ class SinglyLinkedList {
 		}
 		return false;
 	}
+	//Insert- Adding a node to the linked list at a specific position.
+	// Pseudocode- 1. If the index is less than zero or greater than or equal to the length of the list, return false.
+	// 2. If the index is the same as the length, push a new node to the end of the list.
+	// 3. If the index is 0,unshift a new node to the start of the list.
+	// 4. Otherwise, using the get method, access the node at the index -1.
+	// 5. Set the next property on that node to be the new node.
+	// 6. Set the next property on the new node to be the previous next.
+	// 7. Increment the length.
+	// 8. Return true.
+	insert(index, val) {
+		if (index < 0 || index >= this.length) return false;
+		if (index === this.length) return !!this.push(val);
+		if (index === 0) return !!this.unshift(val);
+
+		let newNode = new Node(val);
+		let prev = this.get(index - 1);
+		let temp = prev.next;
+		prev.next = newNode;
+		newNode.next = temp;
+
+		this.length++;
+		return true;
+	}
+	// Remove- Removing a node from the Linked list at a specific position.
+	// Pseudocode- 1. If the index is less than zero or greater than the length of the list, return undefined.
+	// 2. If the index is the same as the length-1,pop.
+	// 3. If the index is 0, shift.
+	// 4. Otherwise, using the get method, access the node at the index-1.
+	// 5. Set the next property on that node to be the next of the next node.
+	// 6. Decrement the length.
+	// 7. Return the value of the node removed.
+	remove(index) {
+		if (index < 0 || index >= this.length) return undefined;
+		if (index === this.length - 1) return this.pop();
+		if (index === 0) return this.shift();
+
+		let previousNode = this.get(index - 1);
+		let removed = previousNode.next;
+		previousNode.next = removed.next;
+		this.length--;
+		return removed;
+	}
+	// Reverse- Reversing the linked list in place.
+	// Pseudocode- 1. Swap the head and tail.
+	// 2. Create a variable called next.
+	// 3. Create a variable called prev.
+	// 4. Create a variable called node and initialize it to the head property.
+	// 5. Loop through the list.
+	// 6. Set next to be the next property on whatever node is.
+	// 7. Set the next property on the node to be whatever prev is.
+	// 8. Set prev to be the value of the node variable.
+	// 9. Set the node variable to be the value of the next variable.
+	reverse() {
+		let node = this.head;
+		this.head = this.tail;
+		this.tail = node;
+		let next;
+		let prev = null;
+	}
 }
